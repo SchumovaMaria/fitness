@@ -1,0 +1,19 @@
+.section h2 {
+  margin: 0;
+  font-family: $ff-accent;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0.04em;
+
+  color: $color-sapphire;
+
+  @include vp-1199 {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  @include vp-767 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+}

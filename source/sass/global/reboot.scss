@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html,
@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  min-width: 320px;
 }
 
 html {
@@ -16,8 +17,10 @@ html {
   font-weight: 400;
   font-size: $fz-default;
   line-height: 24px;
-  font-family: $ff-placeholder;
-  color: $color-default-black;
+  font-family: $ff-general;
+  color: $color-sapphire;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,6 +40,7 @@ body {
 a {
   color: $color-default-black;
   text-decoration: none;
+  user-select: none;
 }
 
 img,
@@ -44,6 +48,7 @@ video {
   display: block;
   max-width: 100%;
   height: auto;
+  user-select: none;
 }
 
 textarea {
@@ -126,4 +131,5 @@ button,
 [type="reset"],
 [type="submit"] {
   appearance: none;
+  user-select: none;
 }

@@ -17,6 +17,56 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+
+    // Удаление классов отключённого js
+
+    Array.from(document.querySelectorAll('[data-has-no-js]')).forEach((element) => element.classList.remove('has-no-js'));
+
+    // Кнопка проигрывания видео
+    const videoButton = document.querySelector('[data-video-button]');
+    const videoPlayer = document.querySelector('[data-video-player]');
+    const videoPoster = document.querySelector('[data-video-poster]');
+
+    if (videoButton && videoPlayer && videoPoster) {
+      const hideVideoPoster = () => {
+        setTimeout(() => {
+          videoPoster.style.display = 'none';
+        }, 500);
+      };
+      videoButton.addEventListener('click', () => {
+        videoPoster.style.opacity = '0';
+        hideVideoPoster();
+        videoPlayer.src += '&autoplay=1';
+      });
+    }
+
+    // Табы
+
+    const removeTabsContentsActiveClass = (tabsButtons, tabsContents) => {
+      tabsButtons.forEach((button) => {
+        button.classList.remove('is-active');
+      });
+      tabsContents.forEach((content) => {
+        content.classList.remove('is-active');
+      });
+    };
+
+    const setTabsEventListener = (tabsButtons, tabsContents) => {
+      if (tabsButtons && tabsButtons.length > 0 && tabsContents && tabsContents.length > 0) {
+        for (let i = 0; i < tabsButtons.length; i++) {
+          tabsButtons[i].addEventListener('click', () => {
+            removeTabsContentsActiveClass(tabsButtons, tabsContents);
+            tabsButtons[i].classList.add('is-active');
+            tabsContents[i].classList.add('is-active');
+          });
+        }
+      }
+    };
+
+    const tabsButtons = Array.from(document.querySelectorAll('[data-tab-button]'));
+    const tabsContents = Array.from(document.querySelectorAll('[data-tab-content]'));
+
+    setTabsEventListener(tabsButtons, tabsContents);
   });
 });
 

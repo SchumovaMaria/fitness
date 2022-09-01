@@ -1,0 +1,154 @@
+.gym {
+  padding-top: 120px;
+  padding-bottom: 122px;
+  color: $color-sapphire;
+
+  @include vp-1199 {
+    padding-top: 102px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 70px;
+    padding-bottom: 71px;
+  }
+}
+
+.gym__container {
+  display: grid;
+  grid-template-columns: #{"max(390px, 36%)"} 1fr;
+  column-gap: #{"clamp(10px,1.7%,20px)"};
+  align-items: start;
+
+  @include vp-1199 {
+    grid-template-columns: 100%;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
+}
+
+.gym__text-content {
+  padding-top: 50px;
+  padding-left: #{"clamp(1px, 15%, 60px)"};
+  word-break: break-word;
+
+  @include vp-1199 {
+    justify-self: center;
+    max-width: 75%;
+    padding-top: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+    padding-right: #{"clamp(15px,4%,45px)"};
+    padding-left: #{"clamp(15px,4%,45px)"};
+    text-align: start;
+  }
+}
+
+.gym__text-content h2 {
+  margin-bottom: 4px;
+}
+
+.gym__subtitle {
+  margin-bottom: 40px;
+
+  @include vp-1199 {
+    margin-bottom: 36px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.gym__subtitle p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.gym__subtitle span {
+  white-space: nowrap;
+}
+
+.gym__text {
+  margin-bottom: 50px;
+
+  @include vp-1199 {
+    margin-bottom: 43px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 33px;
+  }
+}
+
+.gym__text p {
+  margin: 0;
+  margin-bottom: 8px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:not(:first-child) {
+    @include vp-1199 {
+      display: none;
+    }
+  }
+}
+
+.gym__text br {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.gym__visual-content {
+  display: grid;
+  grid-template-columns: 50.3% 49.6%;
+  grid-template-rows: auto #{"clamp(50px, 22%, 113px)"};
+
+  @include vp-1199 {
+    grid-template-columns: 1fr 39.3% 1fr;
+    grid-template-rows: auto #{"clamp(80px,20%,135px)"};
+  }
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.gym__visual-content img {
+  width: 100%;
+}
+
+.gym__img {
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  margin-left: 63px;
+
+  @include vp-1199 {
+    margin-left: 0;
+  }
+
+  @include vp-767 {
+    margin-bottom: 40px;
+  }
+}
+
+.gym__video {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+
+  @include vp-1199 {
+    grid-column: 2 / 3;
+    justify-self: center;
+  }
+}
