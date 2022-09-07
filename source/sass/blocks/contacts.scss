@@ -1,0 +1,138 @@
+.contacts {
+  padding-top: 70px;
+  padding-bottom: 64px;
+  border-top: 1px solid $light-slate-grey;
+}
+
+.contacts__inner-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-content: end;
+  width: #{"clamp(450px, 85%, 580px)"};
+
+  @include vp-1199 {
+    display: block;
+    width: 100%;
+  }
+}
+
+.contacts__inner-wrapper > * {
+  width: 460px;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+}
+
+.contacts h2 {
+  margin-bottom: 39px;
+  letter-spacing: 0.03em;
+  text-align: start;
+
+  @include vp-1199 {
+    margin-bottom: 32px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 34px;
+  }
+}
+
+.contacts__list {
+  padding-left: 4px;
+
+  @include vp-1199 {
+    padding-left: 0;
+  }
+}
+
+.contacts__list dl {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46% 1fr;
+  column-gap: 80px;
+  row-gap: 18px;
+  grid-auto-flow: dense;
+  margin: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 6px;
+    bottom: 6px;
+    left: 50.5%;
+    width: 1px;
+    background-color: $light-slate-grey;
+  }
+
+  @include vp-1199 {
+    grid-template-columns: 48% 1fr;
+    column-gap: 70px;
+    row-gap: 22px;
+
+    &::before {
+      left: #{"clamp(266px, 52.2%, 480px)"};
+    }
+  }
+
+  @include vp-767 {
+    grid-template-columns: 100%;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.contacts__item dt {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  @include vp-1199 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.contacts__item dd {
+  font-family: $ff-general;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include vp-1199 {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+.contacts__item address,
+.contacts__item a {
+  font: inherit;
+  color: inherit;
+}
+
+.contacts__item a {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.contacts__item:nth-child(5n + 2) {
+  grid-column: 1 / 2;
+
+  @include vp-767 {
+    grid-column: auto;
+  }
+}

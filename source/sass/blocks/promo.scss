@@ -1,0 +1,14 @@
+.promo {
+  padding-top: 121px;
+  padding-bottom: 120px;
+
+  @include vp-1199 {
+    padding-top: 100px;
+    padding-bottom: 101px;
+  }
+
+  @include vp-767 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}

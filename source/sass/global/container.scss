@@ -2,7 +2,15 @@
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 0 #{"clamp(95px, 8%, 102px)"};
+}
+
+.container--size-s {
+  padding: 0 #{"clamp(95px, 8%, 103px)"};
+
+  @include vp-1365 {
+    max-width: 1223px;
+    padding: 0 30px;
+  }
 
   @include vp-1199 {
     padding: 0 #{"clamp(45px, 5%, 95px)"};
@@ -10,5 +18,29 @@
 
   @include vp-767 {
     padding: 0 #{"clamp(13px, 4%, 45px)"};
+  }
+}
+
+.container--size-m {
+  padding: 0 #{"clamp(95px, 8%, 103px)"};
+
+  @include vp-1199 {
+    padding: 0 #{"clamp(45px, 5%, 95px)"};
+  }
+
+  @include vp-767 {
+    padding: 0 #{"clamp(15px, 4%, 45px)"};
+  }
+}
+
+.container--size-l {
+  padding: 0 #{"clamp(30px, 3.5%, 47px)"};
+
+  @include vp-1199 {
+    padding: 0 #{"clamp(45px, 5%, 47px)"};
+  }
+
+  @include vp-767 {
+    padding: 0 #{"clamp(15px, 5%, 45px)"};
   }
 }

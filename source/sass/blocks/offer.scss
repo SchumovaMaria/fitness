@@ -1,0 +1,207 @@
+.offer__text-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.offer .offer__inner-wrapper {
+  display: grid;
+  word-break: break-word;
+
+  @include vp-767 {
+    position: relative;
+    text-align: center;
+  }
+}
+
+.offer--with-img {
+  position: relative;
+  width: 100%;
+  padding-top: 82.5%;
+
+  @include vp-1199 {
+    padding-top: 68.1%;
+  }
+
+  @include vp-767 {
+    position: static;
+    padding-top: 0;
+  }
+}
+
+.offer--general {
+  height: 211px;
+  border-width: 7px;
+
+  @include vp-1199 {
+    height: revert;
+    min-height: 211px;
+  }
+}
+
+.offer--with-img .offer__inner-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include vp-1199 {
+    grid-template-columns: 41.2% 1fr;
+  }
+
+  @include vp-767 {
+    position: relative;
+    grid-template-columns: 100%;
+  }
+}
+
+.offer--general .offer__inner-wrapper {
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  padding: 23px 28px 28px;
+  color: $color-resolution-blue;
+  border: 7px solid transparent;
+  border-image: linear-gradient(to right bottom, $color-crimson, $color-smalt);
+  border-image-width: 7px;
+  border-image-slice: 10%;
+  overflow-y: scroll;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  @include vp-767 {
+    padding-top: 34px;
+    padding-bottom: 39px;
+  }
+}
+
+.offer--diff-padding .offer__inner-wrapper {
+  @include vp-1199 {
+    padding-right: 60px;
+  }
+
+  @include vp-767 {
+    padding-right: 28px;
+  }
+}
+
+.offer--with-img .offer__text-content {
+  padding: 41px 20px 46px 45px;
+  color: $color-default-white;
+  background-color: $color-torch-red;
+  overflow-y: scroll;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  @include vp-767 {
+    padding: 41px 20px 45px;
+  }
+}
+
+.offer h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.offer--with-img h3 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  line-height: 30px;
+
+  @include vp-767 {
+    margin-bottom: 11px;
+  }
+}
+
+.offer--general h3 {
+  margin-bottom: 9px;
+  font-size: 26px;
+  line-height: 28px;
+}
+
+.offer--with-img .offer__text-accent {
+  font-size: 70px;
+  line-height: 73px;
+}
+
+.offer p {
+  margin: 0;
+  margin-bottom: 35px;
+
+  @include vp-767 {
+    margin-bottom: 32px;
+  }
+}
+
+.offer--with-img p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.offer--general p {
+  font-size: 16px;
+  line-height: 22px;
+
+  @include vp-767 {
+    margin-bottom: 20px;
+  }
+}
+
+.offer .offer__btn {
+  justify-self: start;
+  margin-top: auto;
+
+  @include vp-767 {
+    justify-self: center;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.offer--with-img .offer__btn {
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-default-white;
+  border-bottom: 1px solid $color-default-white;
+}
+
+.offer--general .offer__btn {
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-resolution-blue;
+  border-bottom: 1px solid $color-resolution-blue;
+}
+
+.offer--with-img .offer__img-content {
+  background-color: #4574e1;
+
+  @include vp-1199 {
+    overflow: hidden;
+  }
+}
+
+.offer--with-img img {
+  @include vp-1199 {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+  }
+}

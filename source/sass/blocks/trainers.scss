@@ -1,0 +1,278 @@
+.trainers {
+  padding-bottom: 100px;
+
+  @include vp-1199 {
+    padding-bottom: 80px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 51px;
+  }
+}
+
+.trainers h2 {
+  margin-left: 58px;
+  margin-bottom: 30px;
+
+  @include vp-1199 {
+    margin-left: 0;
+    margin-bottom: 19px;
+    text-align: center;
+  }
+
+  @include vp-767 {
+    margin-bottom: 22px;
+  }
+}
+
+.trainers__slider-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: #{"clamp(10px, 3%, 38px)"};
+
+  @include vp-1199 {
+    column-gap: #{"clamp(10px, 5.6%, 38px)"};
+  }
+
+  @include vp-767 {
+    column-gap: #{"clamp(10px, 7.2%, 21px)"};
+  }
+}
+
+.trainers__button svg {
+  @include vp-767 {
+    width: 10px;
+    height: 19px;
+  }
+}
+
+.trainers__slider {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include vp-1199 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 100%;
+  }
+}
+
+.trainers__person-card {
+  position: relative;
+  width: 100%;
+  padding-top: 113%;
+  color: $color-default-white;
+
+  @include vp-1199 {
+    padding-top: 109.5%;
+  }
+
+  @include vp-767 {
+    padding-top: 120.5%;
+  }
+}
+
+.trainers__person-data-wrapper,
+.trainers__person-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.trainers__person-img {
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.trainers__person-img img {
+  width: 100%;
+  max-width: none;
+  min-height: 100%;
+}
+
+.trainers__person-data-wrapper {
+  bottom: 25px;
+  z-index: 1;
+  padding: #{"clamp(20px, 21%, 54px)"} 20px 0;
+  justify-content: center;
+  overflow-y: scroll;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+
+  @include vp-767 {
+    padding-top: #{"clamp(20px, 20%, 44px)"};
+  }
+}
+
+.trainers__person-data {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.trainers__person-data h3 {
+  margin: 0;
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  @include vp-1199 {
+    margin-right: -8px;
+  }
+}
+
+.trainers__person-info {
+  max-width: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.trainers__person-info p {
+  margin: 0;
+  margin-bottom: #{"clamp(10px, 14%, 32px)"};
+  text-align: center;
+  color: $color-spindle;
+
+  @include vp-1199 {
+    margin-right: 8px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+    margin-bottom: #{"clamp(10px,17%,32px)"};
+  }
+}
+
+.trainers__person-features ul {
+  margin: 0;
+  margin-left: #{"clamp(20px, 23%, 51px)"};
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include vp-767 {
+    margin-left: #{"clamp(20px,16%,30px)"};
+  }
+}
+
+.trainers__person-features li {
+  position: relative;
+  list-style-type: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 8px;
+    left: -16px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-default-white;
+  }
+}
+
+.trainers__person-features li:not(:last-child) {
+  margin-bottom: #{"clamp(5px, 7.7%, 13px)"};
+
+  @include vp-767 {
+    margin-bottom: #{"clamp(5px,8%,13px)"};
+  }
+}
+
+.trainers__person-card:hover,
+.trainers__person-card:focus {
+  box-shadow: 0 0 35px rgba(42, 59, 99, 0.17);
+}
+
+.trainers__person-card:hover .trainers__person-img,
+.trainers__person-card:focus .trainers__person-img {
+  &::before {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 38, 84, 0.89);
+  }
+}
+
+.trainers__person-card:hover .trainers__person-info,
+.trainers__person-card:focus .trainers__person-info {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.trainers__person-card:hover .trainers__person-data,
+.trainers__person-card:focus .trainers__person-data {
+  height: auto;
+}
+
+.trainers__person-card:hover h3,
+.trainers__person-card:focus h3 {
+  margin-top: 0;
+
+  @include vp-1199 {
+    margin-right: 8px;
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+  }
+}
+
+.trainers__slider-wrapper.has-no-js {
+  column-gap: #{"clamp(20px, 5%, 56px)"};
+
+  @include vp-1199 {
+    column-gap: #{"clamp(20px,9%,56px)"};
+  }
+
+  @include vp-767 {
+    column-gap: #{"clamp(20px,10.6%,31px)"};
+  }
+}
+
+.trainers__slider-wrapper.has-no-js .trainers__slider {
+  max-height: 335px;
+  grid-auto-flow: unset;
+
+  @include vp-1199 {
+    max-height: 389px;
+  }
+
+  @include vp-767 {
+    max-height: 440px;
+  }
+}
+
+.trainers__slider-wrapper.has-no-js .trainers__person-card {
+  justify-self: center;
+
+  @include vp-1199 {
+    max-width: 350px;
+    padding-top: clamp(294px, 109.5%, 368px);
+  }
+
+  @include vp-767 {
+    max-width: 350px;
+    padding-top: clamp(274px, 120.5%, 423px);
+  }
+}

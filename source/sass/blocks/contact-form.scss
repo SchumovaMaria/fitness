@@ -1,0 +1,62 @@
+.contact-form form {
+  @include vp-1199 {
+    display: grid;
+  }
+}
+
+.contact-form__fields {
+  display: grid;
+  margin-bottom: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 30px;
+
+  @include vp-1199 {
+    column-gap: 60px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 37px;
+    grid-template-columns: 100%;
+  }
+}
+
+.contact-form__field input {
+  width: 100%;
+  padding: 6px 0;
+  color: $color-default-white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $light-slate-grey;
+
+  &::placeholder {
+    font-family: $ff-general;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $color-default-white;
+  }
+}
+
+.contact-form__field label {
+  @include visually-hidden;
+}
+
+.contact-form button[type="submit"] {
+  @include btn;
+  width: 100%;
+  padding: 17px;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-default-white;
+  border: 3px solid $color-default-white;
+
+  @include vp-1199 {
+    justify-self: center;
+    max-width: 726px;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+  }
+}

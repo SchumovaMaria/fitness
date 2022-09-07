@@ -1,0 +1,135 @@
+.footer {
+  padding-top: 41px;
+  padding-bottom: 33px;
+  background-color: $color-black-russian;
+
+  @include vp-1199 {
+    padding-top: 44px;
+  }
+
+  @include vp-767 {
+    padding-top: 46px;
+    padding-bottom: 43px;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 10% 1fr 15%;
+  column-gap: 50px;
+  align-items: start;
+
+  @include vp-1199 {
+    padding-right: #{"clamp(40px, 5%, 95px)"};
+    padding-left: #{"clamp(44px, 5%, 95px)"};
+    grid-template-columns: 14% 1fr 16%;
+    column-gap: #{"clamp(8px, 1%, 50px)"};
+  }
+
+  @include vp-767 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0;
+  }
+}
+
+.footer__logo {
+  margin-top: 4px;
+
+  @include vp-767 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+.footer__logo svg {
+  @include vp-1199 {
+    width: 82px;
+    height: 18px;
+  }
+
+  @include vp-767 {
+    width: 68px;
+    height: 15px;
+  }
+}
+
+.footer__nav-list {
+  display: grid;
+  padding-left: #{"clamp(100px, 25.7%, 198px)"};
+
+  @include vp-1199 {
+    padding-left: #{"clamp(39px, 8%, 100px)"};
+  }
+
+  @include vp-767 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    padding-left: 0;
+  }
+}
+
+.footer__nav-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  @include vp-767 {
+    display: grid;
+    margin-bottom: 34px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+    column-gap: 32px;
+    row-gap: 16px;
+
+    &::before {
+      content: "";
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+}
+
+.footer__nav-list li {
+  list-style-type: none;
+  margin-right: #{"clamp(30px, 6.5%, 37px)"};
+
+  @include vp-1199 {
+    margin-right: #{"clamp(27.4px, 6.5%, 30px)"};
+  }
+
+  @include vp-767 {
+    margin-right: 0;
+  }
+}
+
+.footer__nav-list li:nth-child(1),
+.footer__nav-list li:nth-child(2) {
+  grid-column: 1 / 2;
+}
+
+.footer__nav-list a {
+  @include btn;
+  text-transform: none;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: $color-default-white;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0;
+  }
+}
+
+.footer__social {
+  justify-self: end;
+
+  @include vp-767 {
+    grid-column: 1 / 3;
+    justify-self: start;
+  }
+}

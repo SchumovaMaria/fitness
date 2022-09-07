@@ -1,0 +1,34 @@
+.callback {
+  background-color: $color-sapphire;
+}
+
+.callback__inner-wrapper {
+  width: #{"clamp(450px,85%,580px)"};
+  padding-top: 70px;
+  padding-bottom: 68px;
+  color: $color-default-white;
+
+  @include vp-1199 {
+    width: 100%;
+  }
+}
+
+.callback h2 {
+  margin-bottom: 35px;
+  letter-spacing: 0.03em;
+  color: $color-default-white;
+
+  @include vp-1199 {
+    margin-bottom: 29px;
+    padding-left: 8px;
+  }
+}
+
+.callback__form {
+  max-width: 410px;
+
+  @include vp-1199 {
+    max-width: 100%;
+    padding-left: 6px;
+  }
+}

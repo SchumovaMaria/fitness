@@ -1,0 +1,48 @@
+.slider__button {
+  align-self: center;
+  position: relative;
+  padding: 0;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+  }
+}
+
+.slider__button svg {
+  fill: transparent;
+}
+
+.slider__button--prev {
+  transform: rotate(180deg);
+}
+
+.slider__content {
+  display: grid;
+  grid-column: 2 / 3;
+  column-gap: #{"clamp(10px, 3.5%, 40px)"};
+  row-gap: 60px;
+
+  @include vp-1199 {
+    column-gap: #{"clamp(10px,5.2%,30px)"};
+  }
+}
+
+.slider.has-no-js .slider__button {
+  display: none;
+}
+
+.slider.has-no-js .slider__content {
+  overflow: scroll;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+}
