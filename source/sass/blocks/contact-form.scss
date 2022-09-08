@@ -6,18 +6,18 @@
 
 .contact-form__fields {
   display: grid;
-  margin-bottom: 28px;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
   row-gap: 30px;
+  margin-bottom: 28px;
 
   @include vp-1199 {
     column-gap: 60px;
   }
 
   @include vp-767 {
-    margin-bottom: 37px;
     grid-template-columns: 100%;
+    margin-bottom: 37px;
   }
 }
 

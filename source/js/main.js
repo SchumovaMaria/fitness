@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Array.from(document.querySelectorAll('[data-has-no-js]')).forEach((element) => element.classList.remove('has-no-js'));
 
     // Кнопка проигрывания видео
+
     const videoButton = document.querySelector('[data-video-button]');
     const videoPlayer = document.querySelector('[data-video-player]');
     const videoPoster = document.querySelector('[data-video-poster]');
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
       };
       videoButton.addEventListener('click', () => {
         videoPoster.style.opacity = '0';
+        videoPlayer.style.display = 'block';
         hideVideoPoster();
         videoPlayer.src += '&autoplay=1';
       });
@@ -52,26 +54,27 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     const setTabsEventListener = (tabsButtons, tabsContents) => {
-      if (tabsButtons && tabsButtons.length > 0 && tabsContents && tabsContents.length > 0) {
-        for (let i = 0; i < tabsButtons.length; i++) {
-          tabsButtons[i].addEventListener('click', (evt) => {
-            if (tabsButtons[i].href) {
-              evt.preventDefault();
-            }
-            removeTabsContentsActiveClass(tabsButtons, tabsContents);
-            tabsButtons[i].classList.add('is-active');
-            tabsContents[i].classList.add('is-active');
-          });
-        }
+      for (let i = 0; i < tabsButtons.length; i++) {
+        tabsButtons[i].addEventListener('click', (evt) => {
+          if (tabsButtons[i].href) {
+            evt.preventDefault();
+          }
+          removeTabsContentsActiveClass(tabsButtons, tabsContents);
+          tabsButtons[i].classList.add('is-active');
+          tabsContents[i].classList.add('is-active');
+        });
       }
     };
 
     const tabsButtons = Array.from(document.querySelectorAll('[data-tab-button]'));
     const tabsContents = Array.from(document.querySelectorAll('[data-tab-content]'));
 
-    setTabsEventListener(tabsButtons, tabsContents);
+    if (tabsButtons && tabsButtons.length > 0 && tabsContents && tabsContents.length > 0) {
+      setTabsEventListener(tabsButtons, tabsContents);
+    }
 
     // Слайдер
+
     const SliderDirections = {
       PREVIOUS: 'prev',
       NEXT: 'next',
@@ -94,33 +97,30 @@ window.addEventListener('DOMContentLoaded', () => {
     let slidersArray = [];
 
     const getSliders = (slidesNum) => {
-      if (slidersContainersArray && slidersContainersArray.length > 0) {
-        for (let i = 0; i < slidersContainersArray.length; i++) {
-          slidersArray[i] = {};
-          slidersArray[i].numberOfSlides = slidersContainersArray[i].getAttribute('data-slides-num') ? slidersContainersArray[i].getAttribute('data-slides-num') : slidesNum;
-          slidersArray[i].sliderLoop = slidersContainersArray[i].getAttribute('data-slider-loop');
-          slidersArray[i].sliderPrevButton = slidersContainersArray[i].querySelector('[data-slider-prev-btn]');
-          slidersArray[i].sliderNextButton = slidersContainersArray[i].querySelector('[data-slider-next-btn]');
-          slidersArray[i].sliderCardsList = slidersContainersArray[i].querySelector('[data-slider-list]');
-          slidersArray[i].slidesCollection = slidersArray[i].sliderCardsList.children;
-          slidersArray[i].firstVisibleSlideIndex = 0;
-          slidersArray[i].lastVisibleSlideIndex = slidersArray[i].numberOfSlides > slidersArray[i].slidesCollection.length ? (slidersArray[i].slidesCollection.length - 1) : (slidersArray[i].numberOfSlides - 1);
-          slidersArray[i].prevPossibleClicks = 0;
-          slidersArray[i].nextPossibleClicks = slidersContainersArray[i].getAttribute('data-slider-loop') ? '' : (slidersArray[i].slidesCollection.length - slidersArray[i].numberOfSlides);
+      for (let i = 0; i < slidersContainersArray.length; i++) {
+        slidersArray[i] = {};
+        slidersArray[i].numberOfSlides = slidersContainersArray[i].getAttribute('data-slides-num') ? slidersContainersArray[i].getAttribute('data-slides-num') : slidesNum;
+        slidersArray[i].sliderLoop = slidersContainersArray[i].getAttribute('data-slider-loop');
+        slidersArray[i].sliderPrevButton = slidersContainersArray[i].querySelector('[data-slider-prev-btn]');
+        slidersArray[i].sliderNextButton = slidersContainersArray[i].querySelector('[data-slider-next-btn]');
+        slidersArray[i].sliderCardsList = slidersContainersArray[i].querySelector('[data-slider-list]');
+        slidersArray[i].slidesCollection = slidersArray[i].sliderCardsList.children;
+        slidersArray[i].firstVisibleSlideIndex = 0;
+        slidersArray[i].lastVisibleSlideIndex = slidersArray[i].numberOfSlides > slidersArray[i].slidesCollection.length ? (slidersArray[i].slidesCollection.length - 1) : (slidersArray[i].numberOfSlides - 1);
+        slidersArray[i].prevPossibleClicks = 0;
+        slidersArray[i].nextPossibleClicks = slidersContainersArray[i].getAttribute('data-slider-loop') ? '' : (slidersArray[i].slidesCollection.length - slidersArray[i].numberOfSlides);
 
-          slidersArray[i].showSlide = (direction) => {
-            if (direction === SliderDirections.PREVIOUS) {
-              slidersArray[i].slidesCollection[slidersArray[i].lastVisibleSlideIndex].style.display = 'none';
-              slidersArray[i].slidesCollection[slidersArray[i].slidesCollection.length - 1].style.display = 'grid';
-              slidersArray[i].sliderCardsList.insertBefore(slidersArray[i].slidesCollection[slidersArray[i].slidesCollection.length - 1], slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex]);
-            } else if (direction === SliderDirections.NEXT) {
-              slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex].style.display = 'none';
-              slidersArray[i].sliderCardsList.appendChild(slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex]);
-              slidersArray[i].slidesCollection[slidersArray[i].lastVisibleSlideIndex].style.display = 'grid';
-            }
-          };
-
-        }
+        slidersArray[i].showSlide = (direction) => {
+          if (direction === SliderDirections.PREVIOUS) {
+            slidersArray[i].slidesCollection[slidersArray[i].lastVisibleSlideIndex].style.display = 'none';
+            slidersArray[i].slidesCollection[slidersArray[i].slidesCollection.length - 1].style.display = 'grid';
+            slidersArray[i].sliderCardsList.insertBefore(slidersArray[i].slidesCollection[slidersArray[i].slidesCollection.length - 1], slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex]);
+          } else if (direction === SliderDirections.NEXT) {
+            slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex].style.display = 'none';
+            slidersArray[i].sliderCardsList.appendChild(slidersArray[i].slidesCollection[slidersArray[i].firstVisibleSlideIndex]);
+            slidersArray[i].slidesCollection[slidersArray[i].lastVisibleSlideIndex].style.display = 'grid';
+          }
+        };
       }
     };
 
@@ -225,15 +225,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let currentSlidesNum = updateSlidesNum();
 
-    setSliders(currentSlidesNum);
+    if (slidersContainersArray && slidersContainersArray.length > 0) {
+      setSliders(currentSlidesNum);
 
-    window.addEventListener('resize', () => {
-      let newSlidesNum = updateSlidesNum();
-      if (newSlidesNum !== currentSlidesNum) {
-        currentSlidesNum = newSlidesNum;
-        updateSliders(currentSlidesNum);
-      }
-    });
+      window.addEventListener('resize', () => {
+        let newSlidesNum = updateSlidesNum();
+        if (newSlidesNum !== currentSlidesNum) {
+          currentSlidesNum = newSlidesNum;
+          updateSliders(currentSlidesNum);
+        }
+      });
+    }
 
     // Маска для телефона
 

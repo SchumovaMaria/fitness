@@ -50,9 +50,9 @@
   position: relative;
   display: grid;
   grid-template-columns: 46% 1fr;
+  grid-auto-flow: dense;
   column-gap: 80px;
   row-gap: 18px;
-  grid-auto-flow: dense;
   margin: 0;
 
   &::before {
@@ -97,10 +97,10 @@
 }
 
 .contacts__item dd {
+  margin: 0;
   font-family: $ff-general;
   font-style: normal;
   font-weight: 400;
-  margin: 0;
   font-size: 14px;
   line-height: 21px;
 
@@ -117,10 +117,36 @@
 }
 
 .contacts__item a {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+    background-color: transparent;
+  }
+
   @media (hover: hover), screen and (min-width: 0\0) {
     &:hover,
     &:focus {
       opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 3px solid $color-smalt;
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-smalt;
+      outline-offset: 2px;
     }
 
     &:active {

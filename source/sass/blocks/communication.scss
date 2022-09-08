@@ -1,7 +1,6 @@
 .communication {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  word-break: break-word;
 
   @include vp-1199 {
     grid-template-columns: 100%;
@@ -19,8 +18,8 @@
   }
 
   @include vp-767 {
-    padding-right: #{"clamp(13px,2%,162px)"};
-    padding-left: #{"clamp(8px,2%,126px)"};
+    padding-right: #{"clamp(13px, 2%, 162px)"};
+    padding-left: #{"clamp(8px, 2%, 126px)"};
   }
 }
 
@@ -35,7 +34,7 @@
   }
 
   @include vp-767 {
-    padding-right: #{"clamp(16px,5%,126px)"};
-    padding-left: #{"clamp(16px,5%,126px)"};
+    padding-right: #{"clamp(16px, 5%, 126px)"};
+    padding-left: #{"clamp(16px, 5%, 126px)"};
   }
 }

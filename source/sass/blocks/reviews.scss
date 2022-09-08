@@ -34,7 +34,7 @@
   }
 
   @include vp-767 {
-    grid-template-columns: auto #{"clamp(226px,78%, 566px)"} auto;
+    grid-template-columns: auto #{"clamp(226px, 78%, 566px)"} auto;
     column-gap: #{"clamp(22px, 8%, 60px)"};
   }
 }
@@ -42,6 +42,23 @@
 .reviews__button {
   align-self: start;
   margin-top: 105px;
+  border-radius: 2px;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:focus {
+      outline: 3px solid $color-smalt;
+      outline-offset: 10px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-smalt;
+      outline-offset: 10px;
+    }
+  }
 
   @include vp-767 {
     margin-top: 158px;
@@ -67,7 +84,6 @@
   color: $color-default-white;
   background-color: $color-resolution-blue;
   box-shadow: 0 0 40px rgba(28, 51, 116, 0.2);
-  word-break: break-word;
 
   @include vp-1199 {
     padding-left: 65px;

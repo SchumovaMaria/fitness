@@ -11,12 +11,12 @@
 }
 
 .trainers h2 {
-  margin-left: 58px;
   margin-bottom: 30px;
+  margin-left: 58px;
 
   @include vp-1199 {
-    margin-left: 0;
     margin-bottom: 19px;
+    margin-left: 0;
     text-align: center;
   }
 
@@ -39,6 +39,26 @@
   }
 }
 
+.trainers__button {
+  border-radius: 2px;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:focus {
+      outline: 3px solid $color-smalt;
+      outline-offset: 10px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-smalt;
+      outline-offset: 10px;
+    }
+  }
+}
+
 .trainers__button svg {
   @include vp-767 {
     width: 10px;
@@ -49,8 +69,8 @@
 .trainers__slider {
   padding-top: 20px;
   padding-bottom: 20px;
-  grid-auto-flow: column;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: column;
 
   @include vp-1199 {
     grid-template-columns: repeat(2, 1fr);
@@ -80,27 +100,28 @@
 .trainers__person-img {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
 }
 
 .trainers__person-img {
   bottom: 0;
   z-index: 0;
   overflow: hidden;
+  background-color: #c5ccd8;
 }
 
 .trainers__person-img img {
-  width: 100%;
   max-width: none;
+  width: 100%;
   min-height: 100%;
 }
 
 .trainers__person-data-wrapper {
   bottom: 25px;
   z-index: 1;
-  padding: #{"clamp(20px, 21%, 54px)"} 20px 0;
   justify-content: center;
+  padding: #{"clamp(20px, 21%, 54px)"} 20px 0;
   overflow-y: scroll;
   scrollbar-color: transparent;
   scrollbar-width: none;
@@ -119,9 +140,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  justify-content: center;
 }
 
 .trainers__person-data h3 {
@@ -238,6 +259,8 @@
   }
 }
 
+// .has-no-js
+
 .trainers__slider-wrapper.has-no-js {
   column-gap: #{"clamp(20px, 5%, 56px)"};
 
@@ -251,8 +274,8 @@
 }
 
 .trainers__slider-wrapper.has-no-js .trainers__slider {
-  max-height: 335px;
   grid-auto-flow: unset;
+  max-height: 335px;
 
   @include vp-1199 {
     max-height: 389px;

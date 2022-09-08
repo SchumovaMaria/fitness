@@ -41,19 +41,19 @@
 
 .membership__terms-controls {
   display: grid;
-  grid-template-columns: repeat(3, max-content);
+  grid-template-columns: repeat(3, auto);
   column-gap: 46px;
-  margin-bottom: 38px;
   justify-content: center;
+  margin-bottom: 38px;
 
   @include vp-1199 {
-    margin-bottom: 44px;
     column-gap: 55px;
+    margin-bottom: 44px;
   }
 
   @include vp-767 {
+    column-gap: 42px;
     margin-bottom: 34px;
-    column-gap: 46px;
   }
 }
 
@@ -65,6 +65,23 @@
   color: transparentize($color-sapphire, 0.5);
   letter-spacing: normal;
   text-transform: none;
+  border-radius: 6px;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:focus {
+      outline: 3px solid $color-crimson;
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-crimson;
+      outline-offset: 2px;
+    }
+  }
 
   @include vp-1199 {
     padding: 13px 0;
@@ -80,10 +97,11 @@
   &::before {
     position: absolute;
     content: "";
-    left: 0;
     bottom: 0;
+    left: 0;
     height: 2px;
     background-color: rgba(120, 120, 120, 0.2);
+    pointer-events: none;
   }
 
   &:not(:nth-child(3n)) {
@@ -114,9 +132,9 @@
   &::after {
     position: absolute;
     content: "";
+    bottom: 0;
     left: 0;
     width: 100%;
-    bottom: 0;
     height: 2px;
     background-color: $color-crimson;
   }
@@ -129,8 +147,8 @@
 .membership__terms-decors {
   position: absolute;
   z-index: 0;
-  bottom: -271px;
   right: -285px;
+  bottom: -271px;
 
   @include vp-1199 {
     bottom: -226px;
@@ -172,20 +190,19 @@
 
 .membership__card {
   padding: 50px 20px 61px;
-  word-break: break-word;
   background-color: $color-default-white;
-  border: 7px solid transparent;
+  border: 7px solid $color-default-white;
   overflow: hidden;
 
   @include vp-1199 {
+    justify-self: center;
     width: 442px;
     padding-top: 56px;
-    justify-self: center;
   }
 
   @include vp-767 {
     width: 100%;
-    padding: 44px 37px 48px;
+    padding: 44px 33px 48px;
   }
 }
 
@@ -253,9 +270,9 @@
 
 .membership__price p {
   position: relative;
-  margin: 0;
   grid-column: 1 / 2;
   grid-row: 1 / -1;
+  margin: 0;
   padding-top: 28px;
 
   @include vp-767 {
@@ -272,8 +289,8 @@
   color: $color-egyptian-blue;
 
   @include vp-767 {
-    margin-left: 6px;
     margin-right: 2px;
+    margin-left: 6px;
     font-size: 48px;
     line-height: 72px;
   }
@@ -281,9 +298,9 @@
 
 .membership__price svg {
   @include vp-767 {
-    margin-left: 8px;
     width: 24px;
     height: 33px;
+    margin-left: 8px;
   }
 }
 
@@ -292,12 +309,12 @@
   z-index: 1;
   min-width: 206px;
   padding: 25px;
-  outline: 2px solid $color-resolution-blue;
-  outline-offset: -1px;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.05em;
   background-color: $color-default-white;
+  outline: 2px solid $color-resolution-blue;
+  outline-offset: -1px;
 
   @include vp-1199 {
     outline-color: $color-sapphire;
@@ -308,13 +325,15 @@
   }
 }
 
-.membership__card:hover {
+.membership__card:hover,
+.membership__card:focus-within {
   border-image: linear-gradient(to right bottom, $color-crimson, $color-smalt);
   border-image-width: 7px;
   border-image-slice: 10%;
 }
 
-.membership__card:hover .membership__card-button {
+.membership__card:hover .membership__card-button,
+.membership__card:focus-within .membership__card-button {
   color: $color-default-white;
   background: linear-gradient(97.05deg, $color-torch-red 17.6%, $color-cobalt 95.31%);
   outline: none;
@@ -323,7 +342,6 @@
 // .has-no-js
 
 .membership__container.has-no-js .membership__term-control {
-  // color: $color-sapphire;
   color: transparentize($color-sapphire, 0.5);
 }
 
