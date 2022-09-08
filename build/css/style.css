@@ -3418,10 +3418,6 @@ button,
   }
 
   .offer--with-img .offer__img-content {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    width: -moz-available;
     height: 100%;
     overflow: hidden;
   }
