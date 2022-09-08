@@ -2222,7 +2222,7 @@ button,
   border-bottom: 1px solid #1c3374;
 }
 
-.offer--with-img .offer__img-content {
+.offer--with-img img {
   background-color: #538ee6;
 }
 

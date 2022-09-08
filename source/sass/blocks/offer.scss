@@ -226,8 +226,6 @@
 }
 
 .offer--with-img .offer__img-content {
-  background-color: #538ee6;
-
   @include vp-1199 {
     height: 100%;
     overflow: hidden;
@@ -235,6 +233,8 @@
 }
 
 .offer--with-img img {
+  background-color: #538ee6;
+
   @include vp-1199 {
     width: auto;
     min-height: 100%;
