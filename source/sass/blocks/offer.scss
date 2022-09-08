@@ -234,6 +234,10 @@
     height: 100%;
     overflow: hidden;
   }
+
+  @include vp-767 {
+    width: 100%;
+  }
 }
 
 .offer--with-img img {
