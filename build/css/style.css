@@ -1259,6 +1259,7 @@ button,
 .membership__term-control {
   position: relative;
   padding: 14px 0;
+  font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   color: rgba(16, 38, 84, 0.5);
