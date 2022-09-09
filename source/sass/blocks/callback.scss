@@ -15,12 +15,13 @@
 
 .callback h2 {
   margin-bottom: 35px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   color: $color-default-white;
 
   @include vp-1199 {
     margin-bottom: 29px;
     padding-left: 8px;
+    letter-spacing: 0.03em;
   }
 }
 

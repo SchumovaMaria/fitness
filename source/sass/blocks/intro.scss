@@ -143,6 +143,7 @@
 
 .intro__button {
   justify-self: end;
+  max-width: 380px;
   min-width: 234px;
   padding: 20px 20px 19px;
   font-size: 12px;
@@ -151,10 +152,12 @@
   border: 4px solid $color-default-white;
 
   @include vp-1199 {
+    max-width: 321px;
     min-width: 187px;
   }
 
   @include vp-767 {
+    max-width: 100%;
     width: 100%;
     min-width: auto;
     padding-bottom: 21px;

@@ -197,6 +197,7 @@
   }
 
   @include vp-767 {
+    position: static;
     justify-self: center;
 
     &::before {

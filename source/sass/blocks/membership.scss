@@ -26,7 +26,7 @@
   }
 
   @include vp-767 {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
 }
 
@@ -44,6 +44,8 @@
   grid-template-columns: repeat(3, auto);
   column-gap: 46px;
   justify-content: center;
+  max-width: 678px;
+  margin: 0 auto;
   margin-bottom: 38px;
 
   @include vp-1199 {
@@ -52,13 +54,16 @@
   }
 
   @include vp-767 {
-    column-gap: 42px;
+    column-gap: 44px;
+    justify-content: stretch;
     margin-bottom: 34px;
   }
 }
 
 .membership__term-control {
   position: relative;
+  align-items: start;
+  height: 100%;
   padding: 14px 0;
   font-weight: 400;
   font-size: 20px;
@@ -114,7 +119,7 @@
       }
 
       @include vp-767 {
-        width: calc(100% + 46px);
+        width: calc(100% + 44px);
       }
     }
   }

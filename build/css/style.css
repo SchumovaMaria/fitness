@@ -994,6 +994,7 @@ button,
 .intro__button {
   -ms-grid-column-align: end;
   justify-self: end;
+  max-width: 380px;
   min-width: 234px;
   padding: 20px 20px 19px;
   font-size: 12px;
@@ -1253,11 +1254,17 @@ button,
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  max-width: 678px;
+  margin: 0 auto;
   margin-bottom: 38px;
 }
 
 .membership__term-control {
   position: relative;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  height: 100%;
   padding: 14px 0;
   font-weight: 400;
   font-size: 20px;
@@ -1884,9 +1891,9 @@ button,
   -ms-grid-columns: 1fr 240px 1fr;
   grid-template-columns: 1fr 240px 1fr;
   grid-auto-flow: dense;
-  -webkit-column-gap: 55px;
-  -moz-column-gap: 55px;
-  column-gap: 55px;
+  -webkit-column-gap: 50px;
+  -moz-column-gap: 50px;
+  column-gap: 50px;
   row-gap: 149px;
   margin: 0;
   padding: 0 62px;
@@ -1932,7 +1939,7 @@ button,
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
-  padding-left: 8px;
+  padding-left: 12px;
 }
 
 .features__item:nth-child(5n + 3) {
@@ -1959,7 +1966,7 @@ button,
 }
 
 .features__item:nth-child(5n + 5) {
-  padding-left: 7px;
+  padding-left: 12px;
 }
 
 .features__item-feature-name {
@@ -2364,7 +2371,7 @@ button,
 
 .callback h2 {
   margin-bottom: 35px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   color: #ffffff;
 }
 
@@ -3033,6 +3040,7 @@ button,
   }
 
   .intro__button {
+    max-width: 321px;
     min-width: 187px;
   }
 
@@ -3321,6 +3329,7 @@ button,
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2 / 3;
+    padding-left: 8px;
   }
 
   .features__item:nth-child(5n + 3) {
@@ -3338,6 +3347,10 @@ button,
 
   .features__item:nth-child(5n + 4) {
     padding-left: 0;
+  }
+
+  .features__item:nth-child(5n + 5) {
+    padding-left: 8px;
   }
 
   .features__item-feature-name {
@@ -3470,6 +3483,7 @@ button,
   .callback h2 {
     margin-bottom: 29px;
     padding-left: 8px;
+    letter-spacing: 0.03em;
   }
 
   .callback__form {
@@ -3652,6 +3666,7 @@ button,
   }
 
   .intro__button {
+    max-width: 100%;
     width: 100%;
     min-width: auto;
     padding-bottom: 21px;
@@ -3727,13 +3742,16 @@ button,
   }
 
   .membership h2 {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
 
   .membership__terms-controls {
-    -webkit-column-gap: 42px;
-    -moz-column-gap: 42px;
-    column-gap: 42px;
+    -webkit-column-gap: 44px;
+    -moz-column-gap: 44px;
+    column-gap: 44px;
+    -webkit-box-pack: stretch;
+    -ms-flex-pack: stretch;
+    justify-content: stretch;
     margin-bottom: 34px;
   }
 
@@ -3743,7 +3761,7 @@ button,
   }
 
   .membership__term-control:not(:nth-child(3n))::before {
-    width: calc(100% + 46px);
+    width: calc(100% + 44px);
   }
 
   .membership__terms-decors {
@@ -4050,6 +4068,7 @@ button,
   }
 
   .offer__btn {
+    position: static;
     -ms-grid-column-align: center;
     justify-self: center;
   }
