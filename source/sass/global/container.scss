@@ -17,7 +17,7 @@
   }
 
   @include vp-767 {
-    padding: 0 #{"clamp(13px, 4%, 45px)"};
+    padding: 0 #{"clamp(7px,2%,45px)"};
   }
 }
 
@@ -29,7 +29,7 @@
   }
 
   @include vp-767 {
-    padding: 0 #{"clamp(15px, 4%, 45px)"};
+    padding: 0 #{"clamp(9px,2%,45px)"};
   }
 }
 

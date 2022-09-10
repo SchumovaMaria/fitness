@@ -943,7 +943,7 @@ button,
   font-size: 109px;
   line-height: 109px;
   text-indent: -63px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-align: end;
   text-shadow: 3px 0 0 #ffffff, 1px 0 0 #ffffff;
 }
@@ -2081,19 +2081,29 @@ button,
   row-gap: 40px;
 }
 
+.offers__item {
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
+}
+
 .offers__item--with-img {
   -ms-grid-row-span: 2;
   grid-row: span 2;
 }
 
 .offer--with-img {
-  position: relative;
+  position: static;
+  -ms-flex-item-align: start;
+  -ms-grid-row-align: start;
+  align-self: start;
   width: 100%;
-  padding-top: 82.5%;
+  height: 100%;
 }
 
 .offer--general {
-  height: 211px;
+  min-height: 211px;
+  height: 100%;
   border-width: 7px;
 }
 
@@ -2103,14 +2113,10 @@ button,
 }
 
 .offer--with-img .offer__inner-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
 }
 
 .offer--general .offer__inner-wrapper {
@@ -2125,14 +2131,6 @@ button,
   border-image: linear-gradient(to right bottom, #d10a42, #00359f);
   border-image-width: 7px;
   border-image-slice: 10%;
-  overflow-y: scroll;
-  scrollbar-color: transparent;
-  scrollbar-width: none;
-}
-
-.offer--general .offer__inner-wrapper::-webkit-scrollbar {
-  width: 0;
-  background-color: transparent;
 }
 
 .offer__text-content {
@@ -2147,14 +2145,6 @@ button,
   padding: 41px 20px 46px 45px;
   color: #ffffff;
   background-color: #ed0233;
-  overflow-y: scroll;
-  scrollbar-color: transparent;
-  scrollbar-width: none;
-}
-
-.offer--with-img .offer__text-content::-webkit-scrollbar {
-  width: 0;
-  background-color: transparent;
 }
 
 .offer h3 {
@@ -2231,6 +2221,10 @@ button,
 }
 
 .offer--with-img img {
+  min-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
   background-color: #538ee6;
 }
 
@@ -2327,10 +2321,6 @@ button,
 
 .reviews__person-img img {
   border-radius: 50%;
-}
-
-.reviews__slider-wrapper .reviews__slider {
-  max-height: 315px;
 }
 
 .communication {
@@ -3186,11 +3176,11 @@ button,
   }
 
   .promo-card__text {
-    -ms-grid-columns: 125px 1fr;
-    grid-template-columns: 125px 1fr;
-    -webkit-column-gap: 22px;
-    -moz-column-gap: 22px;
-    column-gap: 22px;
+    -ms-grid-columns: 135px 1fr;
+    grid-template-columns: 135px 1fr;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
     row-gap: 0;
   }
 
@@ -3404,19 +3394,16 @@ button,
     row-gap: 30px;
   }
 
+  .offers__item {
+    -ms-flex-item-align: auto;
+    -ms-grid-row-align: auto;
+    align-self: auto;
+  }
+
   .offers__item--with-img {
     -ms-grid-column-span: 2;
     grid-column: span 2;
     grid-row: revert;
-  }
-
-  .offer--with-img {
-    padding-top: 68.1%;
-  }
-
-  .offer--general {
-    height: 100%;
-    min-height: 211px;
   }
 
   .offer--with-img .offer__inner-wrapper {
@@ -3433,12 +3420,6 @@ button,
 
   .offer--with-img .offer__img-content {
     height: 100%;
-    overflow: hidden;
-  }
-
-  .offer--with-img img {
-    width: auto;
-    min-height: 100%;
   }
 
   .reviews {
@@ -3578,11 +3559,11 @@ button,
 
 @media (max-width: 767px) {
   .container--size-s {
-    padding: 0 clamp(13px, 4%, 45px);
+    padding: 0 clamp(7px,2%,45px);
   }
 
   .container--size-m {
-    padding: 0 clamp(15px, 4%, 45px);
+    padding: 0 clamp(9px,2%,45px);
   }
 
   .container--size-l {
@@ -3612,9 +3593,17 @@ button,
     margin-bottom: 42px;
   }
 
+  .header__logo {
+    margin-left: 8px;
+  }
+
   .header a {
     font-size: 20px;
     line-height: 20px;
+  }
+
+  .header a[href^="tel"] {
+    margin-right: 8px;
   }
 
   .logo__img--header {
@@ -3642,9 +3631,9 @@ button,
   .intro__text {
     -ms-grid-column-align: center;
     justify-self: center;
-    -ms-grid-columns: 39% 61%;
-    grid-template-columns: 39% 61%;
-    max-width: 300px;
+    -ms-grid-columns: (auto)[2];
+    grid-template-columns: repeat(2, auto);
+    max-width: min(95%, 310px);
   }
 
   .intro__content h1 {
@@ -3660,14 +3649,20 @@ button,
     line-height: 34px;
   }
 
+  .intro__services {
+    max-width: 115px;
+  }
+
   .intro__services ul {
     padding-top: 77px;
     margin-bottom: 38px;
   }
 
   .intro__button {
-    max-width: 100%;
-    width: 100%;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    max-width: 96%;
+    width: 96%;
     min-width: auto;
     padding-bottom: 21px;
   }
@@ -3742,16 +3737,17 @@ button,
   }
 
   .membership h2 {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
   }
 
   .membership__terms-controls {
-    -webkit-column-gap: 44px;
-    -moz-column-gap: 44px;
-    column-gap: 44px;
+    -webkit-column-gap: 38px;
+    -moz-column-gap: 38px;
+    column-gap: 38px;
     -webkit-box-pack: stretch;
     -ms-flex-pack: stretch;
     justify-content: stretch;
+    max-width: 96%;
     margin-bottom: 34px;
   }
 
@@ -3761,7 +3757,7 @@ button,
   }
 
   .membership__term-control:not(:nth-child(3n))::before {
-    width: calc(100% + 44px);
+    width: calc(100% + 38px);
   }
 
   .membership__terms-decors {
@@ -3773,8 +3769,8 @@ button,
   }
 
   .membership__card {
-    width: 100%;
-    padding: 44px 33px 48px;
+    width: 96%;
+    padding: 44px 25px 48px;
   }
 
   .membership__card h3 {
@@ -3813,12 +3809,18 @@ button,
   }
 
   .membership__card-button {
-    width: 100%;
+    width: 91%;
   }
 
   .promo {
-    padding-top: 70px;
+    padding-top: 71px;
     padding-bottom: 70px;
+  }
+
+  .promo__container > * {
+    max-width: 96%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .promo-card {
@@ -3831,17 +3833,23 @@ button,
     display: grid;
     -ms-grid-columns: 100%;
     grid-template-columns: 100%;
-    padding: 47px clamp(42px, 14%, 49px) 50px clamp(42px, 14%, 49px);
+    padding: 47px clamp(20px, 8%, 49px) 50px clamp(35px, 12%, 49px);
   }
 
   .promo-card__text {
     -webkit-column-gap: 20px;
     -moz-column-gap: 20px;
     column-gap: 20px;
+    padding-left: 10px;
   }
 
   .promo-card__button {
-    width: 100%;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    min-width: auto;
+    width: 88%;
+    margin-top: 27px;
+    margin-right: 12px;
   }
 
   .trainers {
@@ -4017,15 +4025,13 @@ button,
     -webkit-column-gap: revert;
     -moz-column-gap: revert;
     column-gap: revert;
+    max-width: 96%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .offers__item--with-img {
     grid-column: revert;
-  }
-
-  .offer--with-img {
-    position: static;
-    padding-top: 0;
   }
 
   .offer__inner-wrapper {
@@ -4084,7 +4090,6 @@ button,
   }
 
   .offer--with-img img {
-    width: 100%;
     min-height: auto;
   }
 
@@ -4093,7 +4098,7 @@ button,
   }
 
   .reviews h2 {
-    margin-bottom: 42px;
+    margin-bottom: 43px;
   }
 
   .reviews__slider-wrapper {
@@ -4102,6 +4107,9 @@ button,
     -webkit-column-gap: clamp(22px, 8%, 60px);
     -moz-column-gap: clamp(22px, 8%, 60px);
     column-gap: clamp(22px, 8%, 60px);
+    max-width: 96%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .reviews__button {
@@ -4157,10 +4165,6 @@ button,
     margin-left: 16px;
   }
 
-  .reviews__slider-wrapper .reviews__slider {
-    max-height: 380px;
-  }
-
   .communication__callback {
     padding-right: clamp(13px, 2%, 162px);
     padding-left: clamp(8px, 2%, 126px);
@@ -4169,6 +4173,10 @@ button,
   .communication__contacts {
     padding-right: clamp(16px, 5%, 126px);
     padding-left: clamp(16px, 5%, 126px);
+  }
+
+  .callback__inner-wrapper {
+    padding-bottom: 67px;
   }
 
   .contacts h2 {
@@ -4191,7 +4199,7 @@ button,
   .contact-form__fields {
     -ms-grid-columns: 100%;
     grid-template-columns: 100%;
-    margin-bottom: 37px;
+    margin-bottom: 38px;
   }
 
   .contact-form button[type="submit"] {
@@ -4218,6 +4226,7 @@ button,
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
+    padding-left: 8px;
   }
 
   .footer__logo svg {
@@ -4232,7 +4241,8 @@ button,
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
-    padding-left: 0;
+    padding-right: 10px;
+    padding-left: 8px;
   }
 
   .footer__nav-list ul {
@@ -4282,6 +4292,6 @@ button,
 
   .social li {
     margin-right: 11px;
-    margin-left: 0;
+    margin-left: 8px;
   }
 }

@@ -23,7 +23,7 @@
   @include vp-767 {
     display: grid;
     grid-template-columns: 100%;
-    padding: 47px #{"clamp(42px, 14%, 49px)"} 50px #{"clamp(42px, 14%, 49px)"};
+    padding: 47px #{"clamp(20px, 8%, 49px)"} 50px #{"clamp(35px, 12%, 49px)"};
   }
 }
 
@@ -35,13 +35,14 @@
   align-content: center;
 
   @include vp-1199 {
-    grid-template-columns: 125px 1fr;
-    column-gap: 22px;
+    grid-template-columns: 135px 1fr;
+    column-gap: 10px;
     row-gap: 0;
   }
 
   @include vp-767 {
     column-gap: 20px;
+    padding-left: 10px;
   }
 }
 
@@ -175,7 +176,11 @@
   }
 
   @include vp-767 {
-    width: 100%;
+    justify-self: center;
+    min-width: auto;
+    width: 88%;
+    margin-top: 27px;
+    margin-right: 12px;
   }
 }
 

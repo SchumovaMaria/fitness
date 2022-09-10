@@ -11,6 +11,10 @@
   @include vp-1199 {
     width: 100%;
   }
+
+  @include vp-767 {
+    padding-bottom: 67px;
+  }
 }
 
 .callback h2 {

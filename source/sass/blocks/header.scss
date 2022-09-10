@@ -27,6 +27,10 @@
   @include vp-1199 {
     margin-left: -1px;
   }
+
+  @include vp-767 {
+    margin-left: 8px;
+  }
 }
 
 .header__logo + * {
@@ -70,4 +74,8 @@
   justify-self: end;
   max-width: 170px;
   padding-right: 1px;
+
+  @include vp-767 {
+    margin-right: 8px;
+  }
 }

@@ -50,8 +50,8 @@
 
   @include vp-767 {
     justify-self: center;
-    grid-template-columns: 39% 61%;
-    max-width: 300px;
+    grid-template-columns: repeat(2, auto);
+    max-width: #{"min(95%, 310px)"};
   }
 }
 
@@ -65,7 +65,7 @@
   font-size: 109px;
   line-height: 109px;
   text-indent: -63px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-align: end;
   text-shadow: 3px 0 0 $color-default-white, 1px 0 0 $color-default-white;
 
@@ -115,6 +115,10 @@
 .intro__services {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+
+  @include vp-767 {
+    max-width: 115px;
+  }
 }
 
 .intro__services ul {
@@ -157,8 +161,9 @@
   }
 
   @include vp-767 {
-    max-width: 100%;
-    width: 100%;
+    justify-self: center;
+    max-width: 96%;
+    width: 96%;
     min-width: auto;
     padding-bottom: 21px;
   }

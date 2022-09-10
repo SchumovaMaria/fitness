@@ -1,26 +1,14 @@
 .offer--with-img {
-  position: relative;
+  position: static;
+  align-self: start;
   width: 100%;
-  padding-top: 82.5%;
-
-  @include vp-1199 {
-    padding-top: 68.1%;
-  }
-
-  @include vp-767 {
-    position: static;
-    padding-top: 0;
-  }
+  height: 100%;
 }
 
 .offer--general {
-  height: 211px;
+  min-height: 211px;
+  height: 100%;
   border-width: 7px;
-
-  @include vp-1199 {
-    height: 100%;
-    min-height: 211px;
-  }
 }
 
 .offer__inner-wrapper {
@@ -33,13 +21,9 @@
 }
 
 .offer--with-img .offer__inner-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  width: 100%;
+  min-height: 100%;
 
   @include vp-1199 {
     grid-template-columns: 41.2% 1fr;
@@ -62,14 +46,6 @@
   border-image: linear-gradient(to right bottom, $color-crimson, $color-smalt);
   border-image-width: 7px;
   border-image-slice: 10%;
-  overflow-y: scroll;
-  scrollbar-color: transparent;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    background-color: transparent;
-  }
 
   @include vp-767 {
     padding-top: 34px;
@@ -97,14 +73,6 @@
   padding: 41px 20px 46px 45px;
   color: $color-default-white;
   background-color: $color-torch-red;
-  overflow-y: scroll;
-  scrollbar-color: transparent;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    width: 0;
-    background-color: transparent;
-  }
 
   @include vp-767 {
     padding: 41px 20px 45px;
@@ -229,20 +197,16 @@
 .offer--with-img .offer__img-content {
   @include vp-1199 {
     height: 100%;
-    overflow: hidden;
   }
 }
 
 .offer--with-img img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
   background-color: #538ee6;
 
-  @include vp-1199 {
-    width: auto;
-    min-height: 100%;
-  }
-
   @include vp-767 {
-    width: 100%;
     min-height: auto;
   }
 }

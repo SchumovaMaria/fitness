@@ -8,7 +8,15 @@
   }
 
   @include vp-767 {
-    padding-top: 70px;
+    padding-top: 71px;
     padding-bottom: 70px;
+  }
+}
+
+.promo__container > * {
+  @include vp-767 {
+    max-width: 96%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
