@@ -1,13 +1,13 @@
-## Краткая инструкция по работе
-Для начала работы у вас должна быть установлена **Node.js**
+<img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/htmlcss/logo-for-github-2.png"> Study project for the «[HTML & CSS. Adaptive Website Coding and  Automation](https://assets.htmlacademy.ru/certificates/intensive/203/1522579.pdf)» course from [HTML Academy](https://htmlacademy.ru).
+-
 
-### Основные команды для работы
-- Установка - `npm i`
-- Запуск локального сервера - `npm start`
-- Сборка проекта, минификация скриптов <br>
-и оптимизация изображений перед деплоем на прод - `npm run build`
-- Запуск тестирования на соответствия кодгайдам - `npm test`
-- Создание webp изображений в директории source - `npm run webp`
+- `Node.js` is required to run the project
 
-### Вся разработка ведётся в директории `source`
-### Итоговый код попадает в директорию `build`
+Commands:
+- Install dependencies  - `npm i`
+- Start a local server - `npm start`
+- Build the project - `npm run build`
+- Test the project - `npm test`
+- Create webp images - `npm run webp`
+
+The final code is in the `build` directory
